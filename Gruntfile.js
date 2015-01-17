@@ -10,3 +10,5 @@ grunt.initConfig({
     ]
   }
 });
+
+grunt.registerTask('deploy', ['gh-pages']);
