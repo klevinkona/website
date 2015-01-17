@@ -1,0 +1,51 @@
+<h1><code ng:non-bindable=""></code>
+<div><span class="hint"></span>
+</div>
+</h1>
+<div><div class="usage-page"><h2 id="usage">Usage</h2>
+<p>In this section we will give step-by-step instructions on how you get
+up and running with Angular-NestedSortable in just a few steps.</p>
+<h3 id="usage_1-download-angular-nestedsortable">1. Download Angular-NestedSortable</h3>
+<p>You can install the <code>Angular-NestedSortable</code> package very easily using Bower. After
+installing Bower on your machine, simply run:</p>
+<pre><code>$ bower install Angular-NestedSortable
+</code></pre><h3 id="usage_2-include-the-sources">2. Include the sources</h3>
+<p>Load the file <code>angular-nested-sortable.js</code> in your application.</p>
+<pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;bower_components/angular-nested-sortable/angular-nested-sortable.js&quot;&gt;&lt;/script&gt;
+</code></pre><h3 id="usage_3-add-dependency-to-your-angularjs-application">3. Add dependency to your AngularJS application</h3>
+<p>Add the sortable module as a dependency to your application module.</p>
+<pre><code>var app = angular.module(&#39;MyApp&#39;, [&#39;ui.nestedSortable&#39;])
+</code></pre><h3 id="usage_4-setup-the-nestedsortable-template">4. Setup the NestedSortable template</h3>
+<p>You have all the freedom when creating the HTML for your NestedSortable tree component.
+It&#39;s up to you to choose the elements you want to use, you only need to include the Angular-NestedSortable controllers.</p>
+<h4 id="usage_4-setup-the-nestedsortable-template_example-1">Example 1</h4>
+<p>Tree with one level nesting supports.</p>
+<pre><code>&lt;ol ui-nested-sortable=&quot;&quot; ng-model=&quot;list&quot;&gt;
+  &lt;li ng-repeat=&quot;item in list&quot; ui-nested-sortable-item=&quot;&quot;&gt;
+    &lt;div ui-nested-sortable-handle&gt;
+      {{item.title}}
+    &lt;/div&gt;
+    &lt;ol ui-nested-sortable=&quot;&quot; ng-model=&quot;item.items&quot;&gt;
+      &lt;li ng-repeat=&quot;subItem in item.items&quot; ui-nested-sortable-item=&quot;&quot;&gt;
+        &lt;div ui-nested-sortable-handle&gt;
+          {{subItem.title}}
+        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</code></pre><h4 id="usage_4-setup-the-nestedsortable-template_example-2">Example 2</h4>
+<p>Support unlimited nesting using a template for the menu items.</p>
+<pre><code>&lt;script type=&quot;text/ng-template&quot; id=&quot;items_renderer.html&quot;&gt;
+    &lt;div ui-nested-sortable-handle&gt;
+      {{item.title}}
+    &lt;/div&gt;
+    &lt;ol ui-nested-sortable=&quot;options&quot; ng-model=&quot;item.items&quot;&gt;
+      &lt;li ng-repeat=&quot;item in item.items&quot; ui-nested-sortable-item=&quot;&quot; ng-include=&quot;&#39;items_renderer.html&#39;&quot;&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/script&gt;
+
+&lt;ol ui-nested-sortable=&quot;options&quot; ng-model=&quot;list&quot; id=&quot;nested-sortable-root&quot;&gt;
+    &lt;li ng-repeat=&quot;item in list&quot; ui-nested-sortable-item=&quot;&quot; ng-include=&quot;&#39;items_renderer.html&#39;&quot;&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre></div></div>

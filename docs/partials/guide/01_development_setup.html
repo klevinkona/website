@@ -1,0 +1,39 @@
+<h1><code ng:non-bindable=""></code>
+<div><span class="hint"></span>
+</div>
+</h1>
+<div><div class="development-setup-page"><h2 id="development-environment-setup">Development environment setup</h2>
+<h3 id="development-environment-setup_prerequisites">Prerequisites</h3>
+<ul>
+<li><a href="https://npmjs.org/">Node Package Manager</a> (NPM)</li>
+<li><a href="http://git-scm.com/">Git</a></li>
+</ul>
+<h3 id="development-environment-setup_dependencies">Dependencies</h3>
+<ul>
+<li><a href="http://gruntjs.com/">Grunt</a> (task automation)</li>
+<li><a href="http://bower.io/">Bower</a> (package management)</li>
+</ul>
+<h3 id="development-environment-setup_installation">Installation</h3>
+<p>Run the commands below in the project root directory.</p>
+<h4 id="development-environment-setup_installation_1-install-grunt-and-bower">1. Install Grunt and Bower</h4>
+<pre><code>$ sudo npm install -g grunt-cli bower
+</code></pre><h4 id="development-environment-setup_installation_2-install-project-dependencies">2. Install project dependencies</h4>
+<pre><code>$ npm install
+$ bower install
+</code></pre><h3 id="development-environment-setup_useful-commands">Useful commands</h3>
+<h4 id="development-environment-setup_useful-commands_running-a-local-webserver">Running a local webserver</h4>
+<p>To debug code and run end-to-end tests, it is often useful to have a local HTTP server. For this purpose, we have made available a local web server based on Node.js.</p>
+<p>To start the web server, run:</p>
+<pre><code>$ grunt webserver
+</code></pre><p>To access the local server, enter the following URL into your web browser:</p>
+<pre><code>http://localhost:8080/demo/
+</code></pre><p>By default, it serves the contents of the demo project.</p>
+<h4 id="development-environment-setup_useful-commands_build-source">Build source</h4>
+<p>To build Angular-NestedSortable, use the following command.</p>
+<pre><code>$ grunt build
+</code></pre><p>This will generate a concatenated- and minified JavaScript file in the <code>dist</code> directory.</p>
+<h4 id="development-environment-setup_useful-commands_run-tests">Run tests</h4>
+<p>You can run the tests once or choose to run them continuously.</p>
+<pre><code>$ grunt test
+$ grunt test:continuous
+</code></pre></div></div>
